@@ -1,8 +1,8 @@
 {
   "name": "transmetropolitan",
-  "version": "0.0.1",
-  "description": "In the rosy parks of England",
-  "main": "We'll sit and have a drink",
+  "version": "0.0.2",
+  "description": "In the rosy parks of England. We'll sit and have a drink",
+  "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
