@@ -38,12 +38,13 @@ jobs:
           asset_path: ./${{ steps.get_version.outputs.VERSION }}.zip
           asset_name: ${{ steps.get_version.outputs.VERSION }}.zip
           asset_content_type: application/zip
-      - name: publish npm
-        id: publish-npm
-      - uses: actions/setup-node@v1
+      - name: setup node
+        uses: actions/setup-node@v1
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-      - run: npm publish
+      - name: publish npm
+        id: publish-npm
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
