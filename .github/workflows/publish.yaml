@@ -13,14 +13,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Build project # This would actually build your project, using zip for an example artifact
-        run: npm run build
       - name: Get tag
         id: get_version
         run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
       - name: zip project  
-        run: |
-          zip ${{ steps.get_version.outputs.VERSION }}.zip dist
+        run: zip -r ${{ steps.get_version.outputs.VERSION }}.zip ./dist
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
