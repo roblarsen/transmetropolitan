@@ -18,7 +18,7 @@ jobs:
         run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
       - name: zip project  
         working-directory: dist
-        run: zip -r ./ ../transmetropolitan_${{ steps.get_version.outputs.VERSION }}.zip
+        run: zip -r ../transmetropolitan_${{ steps.get_version.outputs.VERSION }}.zip ./ 
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
