@@ -2,7 +2,7 @@ name: Push to template repository
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -36,5 +36,5 @@ jobs:
           destination-github-username: 'roblarsen'
           destination-repository-name: 'transmetropolitan-template'
           user-email: rob@htmlcssjavascript.com
-          commit-message: "The latest and greatest from transmetropolitan"
+          commit-message: "The latest and greatest code from transmetropolitan"
           
